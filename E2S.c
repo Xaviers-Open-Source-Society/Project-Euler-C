@@ -1,5 +1,4 @@
 #include<stdio.h>
-int fib(int , int);
 int main(){
 	int fib1 = 1, fib2 = 2, sum = 0, fibn = 0;
 	while(fibn <= 4000000){
