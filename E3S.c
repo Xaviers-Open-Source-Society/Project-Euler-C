@@ -1,6 +1,3 @@
-// The prime factors of 13195 are 5, 7, 13 and 29.
-// What is the largest prime factor of the number 600851475143 ?
-// Solution 6857
 #include<stdio.h>
 
 int prim(int n)          // Function to find whether a number is prime or not. (Secondary Function)
