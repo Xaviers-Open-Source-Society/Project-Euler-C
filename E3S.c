@@ -23,7 +23,7 @@ void primary_fn()                // Primary Function
 	   {
 	     if (prim(i))                                              // Enter only if i is prime.
 	    {
-	       printf("\n\t %d",i);
+	       printf("\n\t %lld",i);
          if (i>=bigger_num)
            bigger_num=i;
       }
