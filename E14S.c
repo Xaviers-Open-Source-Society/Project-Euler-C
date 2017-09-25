@@ -19,7 +19,6 @@ int main(){
 			}
 		chain_length_counter++;
 		}
-		//printf("\n\n");
 		i++;
 	}
 	printf("Largest chain length producing number is %lld.\n", largest_chain_producer);
