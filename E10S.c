@@ -3,27 +3,27 @@
  */
 #include<stdio.h>
 #include<math.h>
- int prime_check(long  number)
+long long int prime_check(long long int );
+long long int prime_check(long long int number)
 {
-	int i;
-	 for (i=2;i<=sqrt(number);i++)
+	long long int i;
+	int sqrt_number = sqrt(number);
+	for (i = 2; i <= sqrt_number; i++)
        {
-       	 if (number%i==0)
-       	  {
+       	if (number % i == 0)
+       		{
 			 return 0;;
-		  }
+		    }
 	   }
-	   
-	 return 1;
+	return 1;
 }
-void main()
+int main()
 {
-     long  sum=0;
-     int i;
-	 for (i=2;i<2000000;i++)
-	 {
+    long long int sum=0, i;
+	for (i=2;i<2000000;i++)
+	{
 	    if (prime_check(i))
-		 sum = sum + i;	
-	 }
-     printf("\n\n Required sum : %ld",sum);
+			sum = sum + i;	
+	}
+    printf("Required sum : %lld.\n",sum);
 }
