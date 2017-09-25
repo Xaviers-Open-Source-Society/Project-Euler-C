@@ -1,37 +1,35 @@
+/*
+By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+What is the 10 001st prime number?
+*/
 #include<stdio.h>
-int main(){
-	long long int prime_array[10001];
-	prime_array[0] = 2;
-	prime_array[1] = 3;
-	prime_array[2] = 5;
-	prime_array[3] = 7;
-	prime_array[4] = 11;
-	prime_array[5] = 13;
-	//counter_external count the prime_array index.
-	/*counter_internal verifies that given number i is prime or not. if counter_internal is equal to counter_external then it is prime,
-  since not divisible by all prime numbers till i.*/
-	long long int counter_external = 6, i = 14, j, counter_internal = 0;
-	while(counter_external != 10001){
-		while(counter_internal != counter_external){
-			j = 0;
-			while(j < counter_external){
-				if(i % prime_array[j] == 0){
-					i++;
-					printf("%lld\n", i);
-					counter_internal = 0;
-					j = 0; 
-				}
-				else{
-					counter_internal++;
-					j++;
-				}
-			}
-		}
-		if(counter_internal == counter_external){
-			counter_external++;
-			prime_array[counter_external] = i;
-		}
-	}
-	printf("10001th Prime is %lld.\n", prime_array[10001]);
+#include<math.h>
+long long int prime_check(long long int );
+long long int prime_check(long long int number)
+{
+	long long int i;
+	int sqrt_number = sqrt(number);
+	for (i = 2; i <= sqrt_number; i++)
+       {
+       	if (number % i == 0)
+       		{
+			 return 0;;
+		    }
+	   }
+	return 1;
 }
-
+int main()
+{
+    long long int sum=0, i = 2, counter = 0, prime_10001;
+	while(counter != 10001)
+	{
+	    if (prime_check(i)){
+			prime_10001 = i;
+			counter = counter + 1;
+			i++;
+		}
+		else
+			i++;
+	}
+    printf("Required Prime is : %lld.\n",prime_10001);
+}
