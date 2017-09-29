@@ -1,5 +1,5 @@
 #include<stdio.h>
- void main()
+ int main()
  {
  	int i,j,k,big=1788696,arr[20][20]={
 	 { 8, 02, 22, 97, 38, 15, 00, 40, 00, 75, 04, 05, 07, 78, 52, 12, 50, 77, 91, 8 },
@@ -26,37 +26,35 @@
 	 for (i=0;i<20;i++)
 	  for (j=0;j<20;j++)
 	   {
-	     if (j>17){
+	     if (j>16){
 		 }
 	     else
 	     {	     
 		  if ((arr[i][j]*arr[i][j+1]*arr[i][j+2]*arr[i][j+3])>=big)
 	       big = (arr[i][j]*arr[i][j+1]*arr[i][j+2]*arr[i][j+3]);
 	     }
-	     if (i>17){
+	     if (i>16){
 		 }
 	     else
 	     {
 		 if ((arr[i][j]*arr[i+1][j]*arr[i+2][j]*arr[i+3][j])>=big)
 	       big = (arr[i][j]*arr[i+1][j]*arr[i+2][j]*arr[i+3][j]);
-         }
-         if (i>17||j>17){
+	     }
+         
+         if (i>16||j>16){
 		 }
          else
          {
 		 if ((arr[i][j]*arr[i+1][j+1]*arr[i+2][j+2]*arr[i+3][j+3])>=big)
 	       big = (arr[i][j]*arr[i+1][j+1]*arr[i+2][j+2]*arr[i+3][j+3]);
 	     }
-	     if (i<2||j<2){
+	     if (i>16||j<2){
 		 }
 		 else
 		 {
-		 if ((arr[i][j]*arr[i-1][j-1]*arr[i-2][j-2]*arr[i-3][j-3])>=big)
-	     big = (arr[i][j]*arr[i-1][j-1]*arr[i-2][j-2]*arr[i-3][j-3]);
-		 }
-		 
-	   }
-	 
+		 if ((arr[i][j]*arr[i+1][j-1]*arr[i+2][j-2]*arr[i+3][j-3])>=big)
+	     big = (arr[i][j]*arr[i+1][j-1]*arr[i+2][j-2]*arr[i+3][j-3]);
+	     }
+		}
 	 printf("\n\n The biggest product is : %d ",big);
-	 
  }
